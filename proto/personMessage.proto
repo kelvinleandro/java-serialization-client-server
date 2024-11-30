@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package org.example;
+
+// Define the Person message
+message PersonProto {
+    string name = 1;
+    uint32 age = 2;
+    string city = 3;
+}
