@@ -3,16 +3,18 @@ package org.example;
 import java.io.Serializable;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@JacksonXmlRootElement
+@JacksonXmlRootElement(localName = "Classroom")
 public class Classroom implements Serializable {
     String name;
     Person[] students;
-    char numberStudents;
+    int numberStudents;
+
+    public Classroom() {}
 
     public Classroom(String name, Person[] students) {
         this.name = name;
         this.students = students;
-        this.numberStudents = (char) students.length;
+        this.numberStudents = students.length;
     }
 
     public Person[] getStudents() {
@@ -21,7 +23,7 @@ public class Classroom implements Serializable {
 
     public void setStudents(Person[] students) {
         this.students = students;
-        this.numberStudents = (char) students.length;
+        this.numberStudents = students.length;
     }
 
     public String getName() {
@@ -32,16 +34,12 @@ public class Classroom implements Serializable {
         this.name = name;
     }
 
-    public char getNumberStudents() {
+    public int getNumberStudents() {
         return numberStudents;
     }
 
-//    public static void main(String[] args) {
-//        Person[] students = {
-//                new Person("Ze colmeia", 13, "Fortaleza"),
-//                new Person("Catatau", 17, "Floresta"),
-//                new Person("Du Dudu Edu", 24, "Rocinha")
-//        };
-//        Classroom c = new Classroom("Primeiro Pici da Cidade", students);
-//    }
+    @Override
+    public String toString() {
+        return "Classroom: " + this.name + ", Students: " + this.numberStudents;
+    }
 }

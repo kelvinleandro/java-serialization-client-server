@@ -34,10 +34,11 @@ public class XmlServer {
 
                 // Deserialize XML into a Person object
                 XmlMapper xmlMapper = new XmlMapper();
-                Person person = xmlMapper.readValue(xmlData, Person.class);
+//                Person obj = xmlMapper.readValue(xmlData, Person.class);
+                Classroom obj = xmlMapper.readValue(xmlData, Classroom.class);
 
                 // Print the deserialized Person object
-                System.out.println("Deserialized object: " + person);
+                System.out.println("Deserialized object: " + obj);
 
                 socket.close();
             }

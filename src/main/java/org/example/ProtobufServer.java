@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.PersonMessage.PersonProto;
+import org.example.ClassroomMessage.ClassroomProto;
 
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -22,10 +23,11 @@ public class ProtobufServer {
                 InputStream inputStream = socket.getInputStream();
 
                 // Parse the Protobuf message directly from the InputStream
-                PersonProto person = PersonProto.parseFrom(inputStream);
+//                PersonProto obj = PersonProto.parseFrom(inputStream);
+                ClassroomProto obj = ClassroomProto.parseFrom(inputStream);
 
                 // Print the deserialized Person object
-                System.out.println("Deserialized object: " + person);
+                System.out.println("Deserialized object: " + obj);
 
                 socket.close();
             }

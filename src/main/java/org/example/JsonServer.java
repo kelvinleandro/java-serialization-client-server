@@ -31,8 +31,9 @@ public class JsonServer {
 
                 // Deserialize the JSON back into a Person object
                 ObjectMapper objectMapper = new ObjectMapper();
-                Person person = objectMapper.readValue(jsonData, Person.class);
-                System.out.println("Deserialized object: " + person);
+                Classroom obj = objectMapper.readValue(jsonData, Classroom.class);
+//                Person obj = objectMapper.readValue(jsonData, Person.class);
+                System.out.println("Deserialized object: " + obj);
 
                 socket.close();
             }

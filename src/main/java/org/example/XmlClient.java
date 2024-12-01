@@ -11,12 +11,19 @@ public class XmlClient {
         String host = "127.0.0.1";
         int port = 9999;
 
-        Person person = new Person("Kelvin", 22, "Fortaleza");
+//        Person person = new Person("Kelvin", 22, "Fortaleza");
+
+        Person[] students = {
+                new Person("Ze colmeia", 13, "Pirambu"),
+                new Person("Catatau", 17, "Carandiru"),
+                new Person("Du Dudu Edu", 24, "Rocinha")
+        };
+        Classroom c = new Classroom("Performance, Cibersegurança e Computação", students);
 
         try {
             // Serialize object to XML
             XmlMapper xmlMapper = new XmlMapper();
-            String xmlData = xmlMapper.writeValueAsString(person);
+            String xmlData = xmlMapper.writeValueAsString(c);
             byte[] xmlBytes = xmlData.getBytes();
 
             // Calculate the size of the serialized XML data

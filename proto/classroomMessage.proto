@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package org.example;
+
+import "personMessage.proto";
+
+message ClassroomProto {
+    string name = 1;
+    repeated org.example.PersonProto students = 2;
+    uint32 numberStudents = 3;
+}
